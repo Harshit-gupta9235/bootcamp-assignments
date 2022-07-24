@@ -1,0 +1,264 @@
+1. Write a function to calculate the area of a circle. (TSRS)
+
+Answer:- 
+
+#include<stdio.h>
+int area(float);
+int main()
+{ float r,b;
+  printf("enter radius");
+  scanf("%f",&r);
+  b=area(r);
+  printf("area is %f",b);
+}
+float area(float r)
+{float b;
+  b=3.14*r*r;
+  return b;
+}
+
+
+2. Write a function to calculate simple interest. (TSRS)
+
+Answer:- 
+
+#include<stdio.h>
+float SI(float,float,float);
+int main()
+{ float p,r,t,b;
+  printf("enter base value,rate and time\n");
+  scanf("%f%f%f",&p,&r,&t);
+  b=SI(p,r,t);
+  printf("simple interest is %f",b);
+}
+float SI(float p,float r,float t)
+{float b;
+  b=(p*r*t)/100;
+  return b;
+}
+
+
+
+3. Write a function to check whether a given number is even or odd. Return 1 if the 
+number is even, otherwise return 0. (TSRS)
+
+Answer:- 
+
+#include<stdio.h>
+int a(int);
+int main()
+{ int p;
+  int b;
+  printf("enter value\n");
+  scanf("%d",&p);
+  b=a(p);
+  if(b)
+    printf("even");
+  else
+    printf("odd");
+  return 0;
+}
+int a(int p)
+{
+	if(p % 2==0)
+    return 1;
+ else
+   return 0;
+}
+
+4. Write a function to print first N natural numbers (TSRN)
+
+Answer:- 
+
+#include<stdio.h>
+void a(int);
+int main()
+{ int p;
+  printf("enter value\n");
+  scanf("%d",&p);
+  a(p);
+  return 0;
+}
+void a(int p)
+{ int i;
+	for(i=1;i<=p;i++)
+         printf("%d\n",i);
+}
+
+
+5. Write a function to print first N odd natural numbers. (TSRN)
+
+Answer:-
+ 
+#include<stdio.h>
+void a(int);
+int main()
+{ int p;
+  int b;
+  printf("enter value\n");
+  scanf("%d",&p);
+  a(p);
+  return 0;
+}
+void a(int p)
+{ int i;
+	for(i=1;i<=p;i++)
+         printf("%d  ",2*i-1);
+}
+
+
+6. Write a function to calculate the factorial of a number. (TSRS)
+
+Answer:-
+
+#include<stdio.h>
+int a(int);
+int main()
+{ int p;
+  int b;
+  printf("enter value\n");
+  scanf("%d",&p);
+  b=a(p);
+  printf("factorial is %d",b);
+  return 0;
+}
+int a(int p)
+{int i,n=1;
+ for(i=1;i<=p;i++)
+        n=n*i;
+ return n;
+}
+
+
+7. Write a function to calculate the number of combinations one can make from n items 
+and r selected at a time. (TSRS)
+
+Answer:-
+
+#include<stdio.h>
+#include<stdlib.h>
+float a(int,int);
+int main()
+{ int n,r;
+  float b;
+  printf("enter value\n");
+  scanf("%d%d",&n,&r);
+  if(n>=r)
+     b=a(n,r);
+  else
+     {printf("invalid numbers");
+     exit(0);
+     }
+  printf("combination is %f",b);
+  return 0;
+}
+float a(int n,int r)
+{int a=1,b,c=1,d=1,i;
+float re;
+ for(i=1;i<=n;i++)
+        a=a*i;
+ for(i=1;i<=r;i++)
+        c=c*i;
+ b=n-r;
+ for(i=1;i<=b;i++)
+    d=d*i;
+ re=a/(c*d);
+ return re;
+}
+
+
+8. Write a function to calculate the number of arrangements one can make from n items 
+and r selected at a time. (TSRS)
+
+Answer:-
+
+#include<stdio.h>
+#include<stdlib.h>
+float a(int,int);
+int main()
+{ int n,r;
+  float b;
+  printf("enter value\n");
+  scanf("%d%d",&n,&r);
+  if(n>=r)
+     b=a(n,r);
+  else
+     {printf("invalid numbers");
+     exit(0);
+     }
+  printf("combination is %f",b);
+  return 0;
+}
+float a(int n,int r)
+{int a=1,b,c=1,d=1,i;
+float re;
+ for(i=1;i<=n;i++)
+        a=a*i;
+ b=n-r;
+ for(i=1;i<=b;i++)
+    d=d*i;
+ re=a/d;
+ return re;
+}
+
+
+9. Write a function to check whether a given number contains a given digit or not. 
+(TSRS)
+
+Answer:-
+
+#include<stdio.h>
+#include<stdlib.h>
+int a(int,int);
+int main()
+{ int n,r;
+  float b;
+  printf("enter value\n");
+  scanf("%d%d",&n,&r);
+  b=a(n,r);
+   if(b>0)
+     printf("digit contain in number");
+   else
+     printf("not contain in number");
+  return 0;
+}
+int a(int n,int r)
+{int count=0,b;
+
+ while(n!=0)
+  {
+     b=n%10;
+     if(b==r)
+        count++;
+     n/=10; 
+   } 
+ return count;
+}
+
+
+10. Write a function to print all prime factors of a given number. For example, if the 
+number is 36 then your result should be 2, 2, 3, 3. (TSRN)
+
+Answer:-
+
+#include<stdio.h>
+#include<stdlib.h>
+void a(int);
+int main()
+{ int n;
+  float b;
+  printf("enter value\n");
+  scanf("%d",&n);
+  a(n);
+  return 0;
+}
+void a(int n)
+{int a=n,i;
+  for(i=2;i<=a;i++)
+  { while(n%i==0)
+     { printf("%d ",i);
+       n/=i;
+     }        
+  }
+} 
+
