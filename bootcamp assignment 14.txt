@@ -1,0 +1,242 @@
+1. Write a program to calculate the sum of numbers stored in an array of size 10. Take
+array values from the user.
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{ int num[10],r,i;
+  printf("enter value ");
+  for(i=0;i<=9;i++)
+  { scanf("%d",&num[i]); 
+    r+=num[i];
+  }        
+  printf("%d",r);
+  return 0;
+}
+
+2. Write a program to calculate the average of numbers stored in an array of size 10.
+Take array values from the user.
+
+Answer:- 
+
+#include<stdio.h>
+int power(int,int);
+int main()
+{ int num[10],r,i;
+  float k;
+  printf("enter value ");
+  for(i=0;i<=9;i++)
+  { scanf("%d",&num[i]); 
+    r+=num[i];
+  }        
+  k=r/10;
+  printf("%f",k);
+  return 0;
+}
+
+3. Write a program to calculate the sum of all even numbers and sum of all odd
+numbers, which are stored in an array of size 10. Take array values from the user.
+
+Answer:- 
+
+#include<stdio.h>
+int power(int,int);
+int main()
+{ int num[10],so=0,se=0,i;
+  float k;
+  printf("enter value ");
+  for(i=0;i<=9;i++)
+  { scanf("%d",&num[i]);
+    if(num[i]%2)
+       so+=num[i];
+    else
+       se+=num[i];
+  }        
+  
+  printf("even= %d\nodd = %d",se,so);
+  return 0;
+}
+
+
+4. Write a program to find the greatest number stored in an array of size 10. Take array
+values from the user.
+
+Answer:- 
+
+#include<stdio.h>
+int power(int,int);
+int main()
+{ int num[10],so=0,k=0,i;  
+  printf("enter value ");
+  for(i=0;i<=9;i++)
+  { scanf("%d",&num[i]);
+    if(num[i]>k)
+       k=num[i];         
+  }        
+  
+  printf("%d",k);
+  return 0;
+}
+
+
+5. Write a program to find the smallest number stored in an array of size 10. Take array
+values from the user.
+
+Answer:- 
+
+#include<stdio.h>
+int power(int,int);
+int main()
+{ int num[10],k,i;  
+  printf("enter max value and values ");
+  scanf("%d",&k);
+  for(i=0;i<=9;i++)
+  { scanf("%d",&num[i]);
+    if(num[i]<=k)
+       k=num[i];         
+  }        
+  
+  printf("\nsmallest value is %d",k);
+  return 0;
+}
+
+
+6. Write a program to sort elements of an array of size 10. Take array values from the
+user.
+
+Answer:- 
+
+#include<stdio.h>
+int power(int,int);
+int main()
+{ int num[10],k,i,j,l,temp;  
+  printf("enter max value and values ");
+  
+  for(i=0;i<=9;i++)
+  { scanf("%d",&num[i]);         
+  }    
+  for(k=0;k<=9;k++)
+  { 
+  	for(j=k+1;j<=9;j++)
+  	{
+  		   if(num[k]>num[j])  		
+  		     {temp=num[k];
+  		      num[k]=num[j];
+  		      num[j]=temp;  		     		     	
+  		     	}		
+  	}
+    printf("%d ",num[k]); 
+  } 
+  return 0;
+}
+
+
+7. Write a program to find second largest in an array.Take array values from the user.
+
+Answer:- 
+
+#include<stdio.h>
+int power(int,int);
+int main()
+{ int num[10],k,i,j,l,temp;  
+  printf("enter max value and values ");
+  
+  for(i=0;i<=9;i++)
+  { scanf("%d",&num[i]);         
+  }    
+  for(k=0;k<=9;k++)
+  { 
+  	for(j=k+1;j<=9;j++)
+  	{
+  		   if(num[k]<num[j])  		
+  		     {temp=num[k];
+  		      num[k]=num[j];
+  		      num[j]=temp;  		     		     	
+  		     	}
+  		
+  	}
+    
+    
+  }
+  printf("%d ",num[1]);
+  return 0;
+}
+
+
+8. Write a program to find the second smallest number in an array.Take array values
+from the user.
+
+Answer:- 
+
+#include<stdio.h>
+int power(int,int);
+int main()
+{ int num[10],k,i,j,l,temp;  
+  printf("enter max value and values ");
+  
+  for(i=0;i<=9;i++)
+  { scanf("%d",&num[i]);         
+  }    
+  for(k=0;k<=9;k++)
+  { 
+  	for(j=k+1;j<=9;j++)
+  	{
+  		   if(num[k]>num[j])  		
+  		     {temp=num[k];
+  		      num[k]=num[j];
+  		      num[j]=temp;  		     		     	
+  		     	}
+  		
+  	}
+    
+    
+  }
+  printf("%d ",num[1]);
+  return 0;
+}
+
+
+9. Write a program in C to read n number of values in an array and display it in reverse
+order. Take array values from the user.
+
+Answer:- 
+
+#include<stdio.h>
+int power(int,int);
+int main()
+{ int num[10],k,i,j,l,temp;  
+  printf("enter max value and values ");
+  
+  for(i=0;i<=9;i++)
+  { scanf("%d",&num[i]);         
+  }    
+  for(k=9;k>=0;k--)
+  { 
+  	printf("%d  ",num[k]);  	        
+  }
+  
+  return 0;
+}
+
+10. Write a program in C to copy the elements of one array into another array.Take array
+values from the user.
+
+Answer:- 
+
+#include<stdio.h>
+int power(int,int);
+int main()
+{ int a[10],k,i,b[10];  
+  printf("enter max value and values\n ");
+  
+  for(i=0;i<=9;i++)
+  { scanf("%d",&a[i]);         
+  }    
+  for(k=0;k<=9;k++)
+  { b[k]=a[k];
+  	printf("%d  ",b[k]);	        
+  }
+  
+  return 0;
+}
