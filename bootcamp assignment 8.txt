@@ -1,0 +1,429 @@
+
+Pattern 1
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=n;
+ for(i=1;i<=row;i++)
+ {
+ 	for(j=1;j<=col;j++)
+ 	{
+ 		if(i>=j)
+ 		  printf("*");
+ 	  else
+      printf(" ");
+   }
+   printf("\n");
+ }
+ return 0;
+ }
+Pattern 2
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=n;
+ for(i=row;i>=1;i--)
+ {
+ 	for(j=1;j<=col;j++)
+ 	{
+ 		if(i<=j)
+ 		  printf("*");
+ 	  else
+      printf(" ");
+   }
+   printf("\n");
+ }
+
+
+ return 0;
+ }
+Pattern 3
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=n;
+ for(i=row;i>=1;i--)
+ {
+ 	for(j=1;j<=col;j++)
+ 	{
+ 		if(i<=j)
+ 		  printf("*");
+ 	  else
+      printf(" ");
+   }
+   printf("\n");
+ }
+
+
+ return 0;
+ }
+
+Pattern 4
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=n;
+ for(i=row;i>=1;i--)
+ {
+ 	for(j=col;j>=1;j--)
+ 	{
+ 		if(i>=j)
+ 		  printf("*");
+ 	  else
+      printf(" ");
+   }
+   printf("\n");
+ }
+ return 0;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pattern 5
+ 
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=2*n-1;
+ for(i=0;i<row;i++)
+ {
+ 	for(j=1;j<=col;j++)
+ 	{
+ 		if(j>=(row-i)&&j<=(row+i))
+ 		  printf("*");
+ 	  else
+      printf(" ");
+   }
+   printf("\n");
+ }
+ return 0;
+ }
+ 
+Pattern 6
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=2*n-1;
+ for(i=(n-1);i>=0;i--)
+ {
+ 	for(j=col;j>=1;j--)
+ 	{
+ 		if(j>=(row-i)&&j<=(row+i))
+ 		  printf("*");
+ 	  else
+      printf(" ");
+   }
+   printf("\n");
+ }
+ return 0;
+ }
+
+Pattern 8
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j,k=1;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=2*n-1;
+ for(i=0;i<row;i++)
+ { k=1;
+ 	for(j=1;j<=col;j++)
+ 	{ 
+ 		if(j>=(row-i)&&j<=(row+i))
+ 		 { printf("%d",k);
+ 		  j<row?k++:k--;
+ 		 }
+ 	  else
+      printf(" ");
+    
+   }
+   printf("\n");
+ }
+ return 0;
+ }
+
+Pattern 9
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j,k=1;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=2*n-1;
+ for(i=(n-1);i>=0;i--)
+ { k=1;
+ 	for(j=col;j>=1;j--)
+ 	{
+ 		if(j>=(row-i)&&j<=(row+i))
+ 		  {
+ 		  	printf("%d",k);
+ 		  	j>row?k++:k--;
+ 		  }
+ 	  else
+      printf(" ");
+   }
+   printf("\n");
+ }
+ return 0;
+ }
+
+Pattern 11
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ char k='A';
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=2*n-1;
+ for(i=0;i<row;i++)
+ { k='A';
+ 	for(j=1;j<=col;j++)
+ 	{ 
+ 		if(j>=(row-i)&&j<=(row+i))
+ 		 { printf("%c",k);
+ 		  j<row?k++:k--;
+ 		 }
+ 	  else
+      printf(" ");
+    
+   }
+   printf("\n");
+ }
+ return 0;
+ }
+
+Pattern 12
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ char k='A';
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=2*n-1;
+ for(i=(n-1);i>=0;i--)
+ { k='A';
+ 	for(j=col;j>=1;j--)
+ 	{
+ 		if(j>=(row-i)&&j<=(row+i))
+ 		  {
+ 		  	printf("%c",k);
+ 		  	j>row?k++:k--;
+ 		  }
+ 	  else
+      printf(" ");
+   }
+   printf("\n");
+ }
+ return 0;
+ }
+
+Pattern 14
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=n;
+ for(i=1;i<=row;i++)
+ { 
+ 	for(j=1;j<=col;j++)
+ 	{ 
+ 		if(j==1||j==i||i==row)
+ 		 { printf("*");
+ 		 }
+ 	  else
+      printf(" ");
+    
+   }
+   printf("\n");
+ }
+ return 0;
+ }
+
+Pattern 15
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=n;
+ for(i=n;i>=1;i--)
+ { 
+ 	for(j=1;j<=col;j++)
+ 	{ 
+ 		if(j==n||j==i||i==1)
+ 		 { printf("*");
+ 		 }
+ 	  else
+      printf(" ");
+    
+   }
+   printf("\n");
+ }
+ return 0;
+ }
+
+Pattern 16
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=2*n-1;
+ for(i=0;i<row;i++)
+ {
+ 	for(j=1;j<=col;j++)
+ 	{
+ 		if(j==(row-i)||j==(row+i)||i==(row-1))
+ 		  printf("*");
+ 	  else
+      printf(" ");
+   }
+   printf("\n");
+ }
+ return 0;
+ }
+
+Pattern 17
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=2*n-1;
+ for(i=(n-1);i>=0;i--)
+ {
+ 	for(j=col;j>=1;j--)
+ 	{
+ 		if(j==(row-i)||j==(row+i)||i==(row-1))
+ 		  printf("*");
+ 	  else
+      printf(" ");
+   }
+   printf("\n");
+ }
+ return 0;
+ }
+
+Pattern 18
+
+Answer:- 
+
+#include<stdio.h>
+int main()
+{int n,row,col,i,j;
+ printf("enter triangle size\n");
+ scanf("%d",&n);
+ row=n;
+ col=2*n-1;
+ for(i=0;i<row;i++)
+ {
+ 	for(j=1;j<=col;j++)
+ 	{
+ 		if(j>=(row-i)&&j<=(row+i))
+ 		  printf("*");
+ 	  else
+      printf(" ");
+   }
+   printf("\n");
+ }
+ col=(2*(n))-1;
+ for(i=(n-1);i>=0;i--)
+ {
+ 	for(j=col;j>=1;j--)
+ 	{
+ 		if(j>=(row-i)&&j<=(row+i))
+ 		  printf("*");
+ 	  else
+      printf(" ");
+   }
+   printf("\n");
+ }
+
+ return 0;
+ }
+
+
+
+
+
+
+
+
+
