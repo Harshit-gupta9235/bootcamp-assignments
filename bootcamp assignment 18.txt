@@ -1,0 +1,237 @@
+1. Write a function to calculate length of the string
+
+Answer:- 
+
+#include<stdio.h>
+int len(char a[]);
+int main()
+{ char str[10];
+  int i;
+  fgets(str,10,stdin);
+  i=len(str);
+  printf("enter words length is %d",i);
+  return 0;
+}
+int len(char a[])
+{ int i;
+  for(i=0;a[i]!='\0';i++);
+  return (i);
+}
+ 
+
+
+2. Write a function to reverse a string.
+
+Answer:- 
+
+#include<stdio.h>
+char* ev(char*,char*);
+int main()
+{ char str[20],ch[20];
+  int i,j,count;
+  fgets(str,20,stdin);
+//ascii code of a is 97
+  
+  printf("%s",ev(str,ch));
+  return 0;
+}
+char* ev(char str[],char ch[])
+{ int i,j;
+  for(i=0;str[i]!='\0';i++);
+  for(j=0;j<=19;j++)
+     {
+     	if(j<=(i-1))
+     	 ch[j]=str[i-1-j];
+      else
+        ch[j]=0;
+    }
+  return &ch[0];
+}
+
+3. Write a function to compare two strings.
+4. Write a function to transform string into uppercase
+
+Answer:- 
+
+#include<stdio.h>
+char* strupr(char*);
+int main()
+{ char str[20],ch;
+  int i,count;
+  fgets(str,20,stdin);
+//ascii code of a is 97
+  
+  printf("%s",strupr(str));
+  return 0;
+}
+char* strupr(char str[])
+{ int i,count;
+ for(i=0;str[i]!='\0';i++)
+  {if(str[i]!=' ')   
+   	{count=(str[i]%97)+65;
+    	str[i]=count;
+   	}
+  }
+  return str;
+}  
+
+5. Write a function to transform a string into lowercase
+
+Answer:- 
+
+#include<stdio.h>
+char* strlwr(char*);
+int main()
+{ char str[20],ch;
+  int i,count;
+  fgets(str,20,stdin);
+//ascii code of a is 97
+  
+  printf("%s",strlwr(str));
+  return 0;
+}
+char* strlwr(char str[])
+{int i,count;
+for(i=0;str[i]!='\0';i++)
+  { 
+   if(str[i]!=' ')
+   	{count=(str[i]%65)+97;
+   	 str[i]=count;
+   	}
+  	
+  }
+ return str;
+} 
+
+6. Write a function to check whether a given string is an alphanumeric string or not. 
+(Alphanumeric string must contain at least one alphabet and one digit)
+
+Answer:-
+
+#include<stdio.h>
+int alpha(char*);
+int main()
+{ char str[20];
+  int i;
+  fgets(str,20,stdin);
+//ascii code of a is 97
+  i=alpha(str);
+  if(i)
+    printf("alphanumeruc series");
+  else
+    printf("not a alphanumeric series"); 
+  return 0;
+}
+int alpha(char str[])
+{
+ int i,a=0,b=0,c=0;
+for(i=0;str[i]!='\0';i++)
+  
+     {
+     	if((str[i]>='a') && (str[i]<='z')) 
+     	{  
+     	     a++;
+     	}
+     	else if((str[i]>='A') && (str[i]<='Z'))
+     	{
+          	 a++;
+      }
+      else if ((str[i]>='0')&&(str[i]<='9'))
+      {
+            b++;
+      }
+      else
+      {
+            c++;
+      }
+    }
+    if((a>0)&&(b>0))
+      return 1;
+    else
+      return 0; 
+}
+
+7. Write a function to check whether a given string is palindrome or not.
+
+
+
+8. Write a function to count words in a given string
+
+Answer:- 
+
+#include<stdio.h>
+int count(char*);
+int main()
+{ char str[20];
+  int i,j,a=0,b=0,c=0;
+  fgets(str,20,stdin);
+//ascii code of a is 97
+  i=count(str);
+  printf("%d",i);
+  return 0;
+}
+int count(char str[])
+{
+	int i,a=0,b=0,c=0;
+	for(i=0;str[i]!='\0';i++)
+  
+     {
+     	if((str[i]>='a') && (str[i]<='z')) 
+     	{  
+     	     a++;
+     	}
+     	else if((str[i]>='A') && (str[i]<='Z'))
+     	{
+          	 a++;
+      }
+      else if ((str[i]>='0')&&(str[i]<='9'))
+      {
+            b++;
+      }
+      else
+      {
+            c++;
+      }
+    }
+ return a;
+ }
+  
+
+
+9. Write a function to reverse a string word wise. (For example if the given string is 
+“Mysirg Education Services” then the resulting string should be “Services Education 
+Mysirg” )
+
+
+
+10. Write a function to find the repeated character in a given string.
+
+Answer:- 
+
+#include<stdio.h>
+int count(char*);
+int main()
+{ char str[20];
+  int i,j,a=0,b=0,c=0;
+  fgets(str,20,stdin);
+//ascii code of a is 97
+  count(str);
+  
+  return 0;
+}
+int count(char str[])
+{
+	int i,j,count;
+	for(i=0;str[i]!='\0';i++)
+   { count=0;
+   	for(j=i+1;str[j]!='\0';j++)
+      { 
+   	if(str[i]==str[j])
+   	    count++;
+      }
+      if(count>0)
+         printf("%c",str[i]);
+     }
+ return 0;
+ }
+  
