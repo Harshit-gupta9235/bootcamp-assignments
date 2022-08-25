@@ -1,0 +1,265 @@
+1. Write a function to swap values of two in variables of calling function. (TSRS)
+
+#include <stdio.h>
+void swap(int*,int*); 
+int main()
+{
+	int a,b;
+	scanf("%d%d",&a,&b);
+	swap(&a,&b);
+	printf("after swaping\n");
+	printf("%d %d",a,b);
+	return 0;
+}
+ 
+void swap(int*p,int*q)
+{int temp;
+ temp=*p;
+ *p=*q;
+ *q=temp;
+}
+
+2. Write a function to swap strings of two char arrays of calling functions. (TSRS)
+
+#include <stdio.h>
+void swap(char*,char*,int);
+char temp; 
+int main()
+{ int i;
+	char a[20],b[20];
+	fgets(a,20,stdin);
+	fgets(b,20,stdin);
+	for(i=0;i<20;i++)
+	{ 
+	swap(&a[i],&b[i],i);
+	}
+	printf("after swaping\n");
+	printf("%s %s",a,b);
+	return 0;
+}
+ 
+void swap(char*p,char*q,int i)
+{
+ temp= *p;
+ *p= *q;
+ *q=temp;
+ 
+}                         OR
+
+
+#include <stdio.h>
+void swap(char*,char*,int);
+char temp; 
+int main()
+{ int i;
+	char a[20],b[20];
+	fgets(a,20,stdin);
+	fgets(b,20,stdin);
+	i=20;	
+	swap(&a[0],&b[0],i);
+	
+	printf("after swaping\n");
+	printf("%s %s",a,b);
+	return 0;
+}
+ 
+void swap(char*p,char*q,int i)
+{int k;
+for(k=0;k<i;k++)
+{
+ temp= *(p+k);
+ *(p+k)= *(q+k);
+ *(q+k)=temp;
+}
+ 
+}
+
+3. Write a function to sort an array of int type values. [ void sort(int *ptr,int size); ]
+
+#include<stdio.h>
+#include<stdlib.h>
+void sort(int*p,int size)
+{
+	int i,j,temp;
+	for(i=0;i<size;i++)
+	{
+		for(j=i+1;j<size;j++)
+		{
+			if(*(p+i)>*(p+j))
+			{
+				temp=*(p+i);
+				*(p+i)=*(p+j);
+				*(p+j)=temp;
+			}
+		}
+	}
+}
+int main()
+{ int*p,i;
+  p=calloc(10,4);
+  for(i=0;i<10;i++)
+   {
+    scanf("%d",(p+i));
+   }
+   sort(p,10);
+   for(i=0;i<10;i++)
+   {
+   	printf("%d ",*(p+i));
+   }
+   free(p);
+}
+  
+
+4. Write a program in C to demonstrate how to handle the pointers in the program.
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{ int*p,i;
+  p=calloc(10,4);
+  for(i=0;i<10;i++)
+   {
+    scanf("%d",(p+i));
+   }
+   for(i=0;i<10;i++)
+   {
+   	printf("%d ",*(p+i));
+   }
+   free(p);
+}
+  
+
+5. Write a program to find the maximum number between two numbers using a pointer
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{ int*p,*q;
+  p=malloc(4);
+  q=malloc(4);     
+  scanf("%d%d",p,q);   
+  if(*p>*q)
+   	printf("%d ",*(p));
+  else
+    printf("%d",*q);   
+   free(p);
+   free(q);
+}
+  
+
+6. Write a program to calculate the length of the string using a pointer
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{ int i;
+  char*p;
+  p=(char*)calloc(20,1);     
+  fgets(p,20,stdin);   
+  for(i=0;*(p+i);i++);  
+  printf("%d",i);   
+  free(p);   
+}
+ 
+
+7. Write a program to count the number of vowels and consonants in a string using a
+pointer.
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{ int i,v=0,c=0;
+  char*p;
+  p=(char*)calloc(20,1);     
+  fgets(p,20,stdin);   
+  for(i=0;*(p+i);i++)
+  {
+  	if(*(p+i)=='a'||*(p+i)=='e'||*(p+i)=='o'||*(p+i)=='i'||*(p+i)=='u')
+  	v++;
+  	else
+  	c++;
+  }
+  	 printf("%d %d",v,c);   
+  free(p);   
+}
+  
+
+8. Write a program to compute the sum of all elements in an array using pointers.
+
+#include<stdio.h>
+#include<stdlib.h>
+int sum(int*p,int size)
+{
+	int s=0,i;
+	for(i=0;i<size;i++)
+	{ 
+	 s+=*(p+i);
+	}
+	return s;
+}
+int main()
+{ int i,n,sm;
+  int*p;
+  printf("enter value you enter\n");
+  scanf("%d",&n);
+  p=(int*)calloc(n,4);         
+  for(i=0;i<n;i++)
+  {
+  	scanf("%d",(p+i));
+  }
+  sm=sum(p,n);  
+  printf("%d",sm);   
+  free(p);   
+}
+  
+
+9. Write a program to print the elements of an array in reverse order.
+
+#include<stdio.h>
+#include<stdlib.h>
+void reverse(int*p,int size)
+{
+	int i;
+	for(i=size-1;i>=0;i--)
+	{ 
+	 printf("%d\n",*(p+i));
+	}
+}
+int main()
+{ int i,n;
+  int*p;
+  printf("enter value you enter\n");
+  scanf("%d",&n);
+  p=(int*)calloc(n,4);         
+  for(i=0;i<n;i++)
+  {
+  	scanf("%d",(p+i));
+  }
+  reverse(p,n);    
+  free(p);   
+}
+  
+
+10. Write a program to print a string in reverse using a pointer
+
+#include<stdio.h>
+#include<stdlib.h>
+void reverse(char*p,int size)
+{
+	int i;
+	for(i=size-1;i>=0;i--)
+	{ 
+	 printf("%c",*(p+i));
+	}
+}
+int main()
+{ int i;
+  char*p;
+  printf("enter value you enter\n");
+  p=(char*)calloc(20,4);         
+  fgets(p,20,stdin);
+  for(i=0;*(p+i);i++);
+  reverse(p,i);    
+  free(p);   
+}
+  
