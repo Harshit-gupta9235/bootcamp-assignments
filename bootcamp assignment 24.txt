@@ -1,0 +1,225 @@
+1. Define a function to check whether a given number is a Prime number or not.
+
+#include<iostream>
+using namespace std;
+#include<stdio.h>
+int prime(int x)
+{ for(int i=2;i<x;i++)
+{ 
+	if(x%2==0)
+	   break;	  
+}
+if(x==i+1)
+  return 1;
+else
+  return 0;
+}
+int main()
+{ int x,y;
+	cout<<"enter a no"<<endl;
+	cin>>x;
+	y=prime(x);
+	if(y==1)
+	 cout<<"prime number"<<endl;
+	else
+	 cout<<"not a prime number"<<endl;
+  return 0;
+}
+
+
+2. Define a function to find the highest value digit in a given number.
+
+#include<iostream>
+using namespace std;
+#include<stdio.h>
+int highest_value_digit(int x)
+{ int temp,k=0;
+	while(x!=0)
+{ temp=x%10;
+  if(temp>k)
+     k=temp;
+  x/=10; 
+}
+  return k;
+}
+int main()
+{ int x,y;
+	cout<<"enter a no"<<endl;
+	cin>>x;
+	y=highest_value_digit(x);
+	cout<<y<<endl;	
+  return 0;
+}
+
+
+3. Define a function to calculate x raised to the power y.
+
+#include<iostream>
+using namespace std;
+#include<stdio.h>
+int power(int x,int y)
+{ int k=1;
+	for(int i=1;i<=y;i++)
+{ k*=x;
+}
+  return k;
+}
+int main()
+{ int x,y,z;
+	cout<<"enter a no ";
+	cin>>x>>y;
+	z=power(x,y);
+	cout<<z<<endl;	
+  return 0;
+}
+
+
+4. Define a function to print Pascal Triangle up to N lines.
+5. Define a function to check whether a given number is a term in a Fibonacci series or
+not.
+
+#include<iostream>
+using namespace std;
+#include<stdio.h>
+int khushi(int x)
+{ int a=0,b=1,c;
+  int z=a,k=b;
+	do
+{ c=k+z;
+  z=k;
+  k=c;
+  if((a==x)||(b==x)||(c==x))
+    return 1;
+}
+	while(c<=x);
+  return 0;
+}
+int main()
+{ int x,y,z;
+	cout<<"enter a no "<<endl;
+	cin>>x;
+	z=khushi(x);
+	if(z==1)
+	  cout<<"number is present in fabbnocci series";	
+	else
+	  cout<<"number is not present";
+  return 0;
+}
+
+
+6. Define a function to swap data of two int variables using call by reference
+
+#include<iostream>
+using namespace std;
+#include<stdio.h>
+void swap(int& x,int& y)
+{ int temp;
+  temp=x;
+  x=y;
+  y=temp;
+}
+int main()
+{ int x,y;
+	cout<<"enter a no "<<endl;
+	cin>>x>>y;
+	swap(x,y);
+	cout<<x<<endl<<y<<endl;
+  return 0;
+}
+
+
+7. Write a function using the default argument that is able to add 2 or 3 numbers.
+
+#include<iostream>
+using namespace std;
+#include<stdio.h>
+int add(int x=0,int y=0,int z=0)
+{ return(x+y+z);
+}
+int main()
+{ int x=2,y=3,z,k;
+	cout<<"enter a no "<<endl;
+	
+	k=add(x);
+	cout<<add()<<endl<<add(x,y)<<endl<<k<<endl;
+	z=5;
+	k=add(x,y,z);
+	cout<<k<<endl;		
+  return 0;
+}
+
+
+8. Define overloaded functions to calculate area of circle, area of rectangle and area of
+triangle
+
+
+
+9. Write functions using function overloading to find a maximum of two numbers and
+both the numbers can be integer or real.
+
+#include<iostream>
+using namespace std;
+#include<stdio.h>
+float max(float x,float y)
+{if(x>y)
+   return x;
+ else
+   return y;
+}
+int max(int x,int y)
+{
+	if(x>y)
+   return x;
+ else
+   return y;
+}
+int main()
+{ int x,y,k;
+	cout<<"enter a no "<<endl;
+	cin>>x>>y;
+	k=max(x,y);	
+	cout<<k<<endl;
+	float a,b,l;
+	cin>>a>>b;
+	l=max(a,b);	
+	cout<<l<<endl;		
+  return 0;
+}
+
+
+10. Write functions using function overloading to add two numbers having different data
+types.
+
+#include<iostream>
+using namespace std;
+#include<stdio.h>
+float add(float x,float y)
+{return(x+y);
+}
+int add(int x,int y)
+{return(x+y);
+}
+float add(float x,int y)
+{return(x+y);
+}
+float add(int x,float y)
+{return(x+y);
+}
+int main()
+{ int x,y,k;
+	cout<<"enter a no "<<endl;
+	cin>>x>>y;
+	k=add(x,y);	
+	cout<<k<<endl;
+	float a,b,l;
+	cin>>a>>b;
+	l=add(a,b);	
+	cout<<l<<endl;	
+	l=add(x,b);	
+	cout<<l<<endl;
+  l=add(a,y);
+	cout<<l<<endl;
+  return 0;
+}
+
+
