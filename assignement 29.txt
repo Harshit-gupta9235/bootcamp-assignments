@@ -1,0 +1,313 @@
+
+
+ans----
+
+
+#include<iostream>
+using namespace std;
+class complex{
+    int real,imag;
+    public:
+    complex(){}
+    complex(int real){this->real=real;imag=0;}
+    void show(){cout<<real<<"+i"<<imag<<endl;}
+};
+int main(){
+    complex a;
+    int x;
+    cin>>x;
+    a=x;
+    a.show();
+    return 0;
+}
+2. Define a class Complex with appropriate instance variables and member functions.
+One of the functions should be setData() to set the properties of the object. Make
+sure the names of formal arguments are the same as names of instance variables.
+
+ans-----
+
+#include<iostream>
+using namespace std;
+class complex{
+    int a,b;
+    public:
+    void setdata(int a,int b){this->a=a;this->b=b;}
+    void showdata(){cout<<a<<"+i"<<b<<endl;}
+    operator int()
+    {
+        return(a);
+    }
+    };
+int main(){
+    complex a;
+    a.setdata(4,5);
+    int e;
+    e=a;
+    cout<<e<<endl;
+    return 0;
+}
+
+3. Overload subscript operator [] that will be useful when we want to check for an index
+out of bound.
+
+ans----
+
+
+#include<iostream>
+using namespace std;
+class product
+{
+    int m,n;
+    public:
+    void setdata(){
+       cin>>m;cin>>n;
+    }
+    void showdata()
+    {
+        cout<<"the product is "<< m<<" and "<<n<<endl;
+    }
+    int getM(){return m;}
+    int getN(){return n;}
+ 
+};
+class item
+{
+    int a,b;
+    public:
+    item(){}
+    item(product d){
+        a=d.getM();
+        b=d.getN();
+    }
+    int showdata()
+    {
+        cout<<"the item is "<<a<<" and "<<b<<endl;
+    }
+    int getA(){
+        return (a);
+    }
+    int getB(){return (b);}
+};
+int main()
+{
+    item l;
+    product p;
+    p.setdata();
+    l=p;
+    l.showdata();
+    return 0;
+}
+
+4. Create Product class and convert Product type to Item type using casting operator.
+
+ans:
+
+#include<iostream>
+using namespace std;
+class item{
+    public:
+    int x,y;
+item(){}
+
+int getx(){return x;}
+int gety(){return y;}
+void show(){cout<<"you fool\n";}};
+class product{
+    int a,b;
+    public:
+    product(int a,int im){this->a=a;this->b=im;}
+    operator item(){item z;z.x=a;z.y=b;return z;}
+    void show(){cout<<a<<"+i"<<b<<endl;}
+    int geta(){return a;}
+    int getb(){return b;}
+};
+int main(){product a(3,4);item c;c=a;c.show();return 0;}
+
+5. Create two classes Invent1 and Invent2 and also add necessary constructors in it. Now add 
+functions to support Invent1 to float and Invent1 to Invent2 type.
+
+ans: 
+
+#include<iostream>
+using namespace std;
+
+class invent2
+{
+    int u,v;
+    public:
+    invent2(){}
+    void setu(int a){u=a;}
+    void setv(int b){v=b;}
+    void show(){cout<<u<<endl<<v<<endl;}
+};
+class invent1
+{
+    int x,y;
+    public:
+    invent1(int a,int b){x=a;y=b;}
+    operator float(){return x;}
+    operator invent2(){invent2 t;t.setu(x);t.setv(y);return t;}
+
+};
+int main()
+{
+    invent1 d(5,6);
+    invent2 e;
+    float t;
+    t=d;
+    e=d;
+    cout<<"float is "<<t<<endl;
+    e.show();
+}
+
+6. Create a Time class and take Duration in seconds. Now you need to convert seconds(i.e in 
+int ) to Time class.
+
+ans:
+
+#include<iostream>
+using namespace std;
+class time
+{
+    int x;
+    public:
+    time(){}
+    time(int y){x=60*y;}
+    void display(){cout<<"time in seconds is "<<x<<"."<<endl;}
+    operator minute(){minute t;t.setx(x);return t;}
+};
+int main()
+{
+    int duration;
+    cout<<"enter time in minutes\n";
+    cin>>duration;
+    time t;
+    t=duration;
+    t.display();
+    return 0;
+}
+
+7. Create two class Time and Minute and add required getter and setter including constructors. 
+Now you need to type cast Time object into Minute to fetch the minute from Time and display it.
+
+ans: 
+
+#include<iostream>
+using namespace std;
+
+class minute
+{
+    int x=0;
+    public:
+    void display(){cout<<x<<endl;}
+    void sety(int t){x=t;}
+};
+class time
+{
+    int x,y;
+    public:
+    time(){}
+    time(int a,int b){x=a;y=b;}
+    void display(){cout<<"hour are "<<x<<" and minutes are "<<y<<endl;}
+    operator minute(){minute t;t.sety(y);return t;}
+};
+int main()
+{
+    time t1(2,30);
+ t1.display();
+ minute m1;
+ m1.display();
+ m1=t1; // Fetch minute from time
+ t1.display();
+ m1.display();
+ return 0;
+}
+
+8. Create a Rupee class and convert it into int. And Display it.
+
+ans:
+
+#include<iostream>
+using namespace std;
+class rupee
+{
+    int x;
+    public:
+    rupee(int y){x=y;}
+};
+int main()
+{
+    rupee a=10;
+    int x;
+    x=a;
+    cout<<x;
+    return 0;
+}
+
+9. Create a Dollar class and add necessary functions to support int to Dollar type conversion.
+
+ans:
+
+#include<iostream>
+using namespace std;
+class dollar
+{
+    int x;
+    public:
+    dollar(int y=0){x=y;}
+    operator int(){return x;}
+    void display(){cout<<"dollars are "<< x<<endl;}
+};
+int main()
+{
+    dollar a;
+    int x;
+    cout<<"enter value u convert into dollarsl\n";
+    cin>>x;
+    a=x;
+    a.display();
+    return 0;
+}
+
+10. Create two classes Rupee and Dollar and add necessary functions to support Rupee to 
+Dollar and Dollar to Rupee conversion.
+
+ans:
+
+#include<iostream>
+using namespace std;
+
+class rupee
+{
+    float x;
+    public:
+    rupee(float x=0){this->x=x;}
+    void setrupee(float x){this->x=x;}
+    float getrupee(){float y;y=x/80;return y;}
+    void display(){cout<<"there are "<<x<<"  rupees. \n";}
+
+
+};
+class dollar
+{
+    float x;
+    public:
+    dollar(rupee a){x=a.getrupee();}
+    operator rupee(){rupee k;k.setrupee(x/80); return k;}
+    void display(){cout<<"dollars are "<< x<<endl;}
+};
+int main()
+{
+   rupee r = 23;
+dollar d = r; // Rupee to Dollar conversion
+d.display();
+r.display();
+r = d; // Dollar to Rupee Conversion
+d.display();
+r.display();
+ return 0;
+}
+
+
+
+
