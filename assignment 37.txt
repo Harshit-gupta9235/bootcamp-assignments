@@ -1,0 +1,229 @@
+1. Declare a vector with Initialization and print the elements.
+
+ans
+
+#include<iostream>
+#include<vector>
+using namespace std;
+void print(vector<int>&v){
+    for (int i = 0; i < v.size(); i++)
+    {
+     cout<<v.at(i);
+    }
+    
+}
+int main(){
+    vector<int>v(10,5);
+    print(v);
+    return 0;
+
+}
+
+2. Declare a vector without initialization, insert some elements and print
+
+ans:
+#include<iostream>
+#include<vector>
+using namespace std;
+void print(vector<int>&v){
+    for (int i = 0; i < v.size(); i++)
+    {
+     cout<<v.at(i);
+    }
+    
+}
+int main(){
+    vector<int>v;
+    cout<<"enter no of element\n";
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++){cout<<"enter element\n";
+    int a;
+    cin>>a;
+    v.push_back(a);
+    }
+    print(v);
+    return 0;
+
+}
+
+3. Write a function to print the element of a vector and take input from the user.
+
+ans:
+#include<iostream>
+#include<vector>
+using namespace std;
+void print(vector<int>&v){
+    for (int i = 0; i < v.size(); i++)
+    {
+     cout<<v.at(i);
+    }
+    
+}
+int main(){
+    vector<int>v;
+    cout<<"enter no of element\n";
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++){cout<<"enter element\n";
+    int a;
+    cin>>a;
+    v.push_back(a);
+    }
+    print(v);
+    return 0;
+
+}
+
+4. Write a program to Copy one vector’s elements to another vector.
+
+ans:
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int>a;
+    cout<<"enter how many no u want to input\n";
+    int n;
+    cin>>n;
+    for (int i = 0; i < n; i++)
+    {int k;
+    cout<<"enter element\n";
+    cin>>k;
+     a.push_back(k);
+    }
+    vector<int>b=a;
+    for (int i = 0; i < b.size(); i++)
+    {
+      cout<<b.at(i);
+    }
+    return 0;
+}
+
+5. Find largest and smallest elements in a vector.
+
+ans:
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int>a;
+    cout<<"enter how many no u want to input\n";
+    int n;
+    cin>>n;
+    for (int i = 0; i < n; i++)
+    {int k;
+    cout<<"enter element\n";
+    cin>>k;
+     a.push_back(k);
+    }int lar=0,small=10000;
+    for (int i = 0; i < a.size(); i++)
+    {
+       if (a.at(i)>lar)
+       {
+        lar=a.at(i);
+       }
+       if (a.at(i)<small)
+       {
+        small=a.at(i);
+       }
+
+    }
+       cout<<lar<<endl<<small<<endl;
+       return 0;
+}
+
+6. Write a program to reverse vector elements.
+
+ans:
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int>a;
+    cout<<"enter how many no u want to input\n";
+    int n;
+    cin>>n;
+    for (int i = 0; i < n; i++)
+    {int k;
+    cout<<"enter element\n";
+    cin>>k;
+     a.push_back(k);
+    }
+    a.reserve(a.size());
+    vector<int>b=a;
+    for (int i = b.size()-1; i>=0; i--)
+    {
+      cout<<b.at(i);
+    }
+    return 0;
+}
+
+7. Write a program to find sum of vector elements.
+
+ans:
+
+#include<iostream>
+#include<vector>
+using namespace std;
+void print(vector<int>&v){
+    for (int i = 0; i < v.size(); i++)
+    {
+     cout<<v.at(i);
+    }
+    
+}
+int main(){
+    vector<int>v;
+    cout<<"enter no of element\n";
+    int n;
+    cin>>n;
+    int k=0;
+    for(int i=0;i<n;i++){cout<<"enter element\n";
+    int a;
+    cin>>a;
+    v.push_back(a);
+    k=k+a;
+    }
+   cout<<k;
+    return 0;
+}
+
+8. Write a program to find common elements between two vectors.
+
+ans:
+
+#include<iostream>
+#include<vector>
+using namespace std;
+void print(vector<int>&v){
+    for (int i = 0; i < v.size(); i++)
+    {
+     cout<<v.at(i);
+    }
+    
+}
+int main(){
+    vector<int>v[2];
+   
+    cout<<"enter no of element\n";
+    int n;
+    cin>>n;
+    for(int j=0;j<2;j++){
+    for(int i=0;i<n;i++){cout<<"enter element\n";
+    int a;
+    cin>>a;
+    v[j].push_back(a);
+    }
+    }
+  for(int i=0;i<v[0].size();i++){for(int j=0;j<v[0].size();j++){
+    if(v[0][i]==v[1][j]){cout<<v[0][i]<<endl;}
+  }}
+    return 0;
+}
+9. Write a program to Push and print elements in a float vector.
+10. Write a program to check whether an element exists in a vector or not.
+
