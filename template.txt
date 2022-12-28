@@ -1,0 +1,181 @@
+1. Write a C++ program to demonstrate the addition of multiple types of data using
+generic functions or templates.
+
+ans:
+
+#include<iostream>
+using namespace std;
+template<class t,class p>
+double add(t a,p b){return(a+b);}
+int main()
+{ double d;
+    float a,b;
+    cout<<"enter two numbers\n";
+    cin>>a>>b;
+   d= add<double,double>(a,b);
+   cout<<d<<endl;
+}
+
+2. Write a C++ Program to find Largest among two numbers using function template.
+
+ans:
+
+#include<iostream>
+using namespace std;
+template<class a,class b,class c>
+c max(a x,b y){
+    c u;
+    u=x>y?x:y;
+    return u;
+}
+int main()
+{  int x;float y;
+    cin>>x>>y;
+    cout<<max<int,float,double>(x,y)<<endl;
+    return 0;
+}
+
+3. Write a C++ program to find the largest of three elements using a template.
+
+ans:
+
+#include<iostream>
+using namespace std;
+template <class p,class q,class r,class s>
+s max(p a,q b,r c){ s pa;
+    if(a>=b&&a>=c)
+    pa=a;
+    else if (b>=a&&b>=c)
+    {
+       pa=b;
+    }
+    else
+    pa=c;
+    return pa;
+}
+int main(){
+    float papa;
+    papa=max<int,int,int,float>(5,6,7);
+    cout<<papa<<endl;
+    return 0;
+}
+
+4. Write a C++ Program to Swap data using function template.
+
+ans:
+
+#include<iostream>
+using namespace std;
+template<class a>
+void sw(a &x,a &y)
+{
+    a temp;
+    temp=x;
+    x=y;y=temp;
+}
+int main()
+{
+    int b,a;
+    cout<<"enter two number \n";
+    cin>>a>>b;
+    cout<<"before swapping\n"<<a<<" and "<<b<<endl;
+    sw<int>(a,b);
+    cout<<"after swapping\n"<<a<<" and "<<b<<endl;
+    return 0;
+}
+
+5. Write a C++ Program to Add two numbers using function template.
+
+ans:
+
+#include<iostream>
+using namespace std;
+template<class t,class p,class m>
+m add(t a,p b)
+{
+    return(a+b);
+}
+int main(){
+    int a=add<int,int,int>(5,6);
+    int b=add<int,int,float>(5,6);
+    float c=add<int,float,float>(5,6.0);
+    float d=add<float,int,int>(5.0,6);
+    cout<<a<<endl<<b<<endl<<c<<endl<<d;
+    return 0;
+}
+
+6. Write a C++ Program to find Sum of Array using function template.
+
+ans:
+
+#include<iostream>
+using namespace std;
+template<typename t>
+t add(t *a,t size)
+{t sum=0;
+    for(int i=0;i<size;i++)
+        sum+=a[i];
+    return sum;
+}
+int main()
+{
+   int a,sum;
+    cout<<"enter how many numbers you want to add\n";
+    cin>>a;
+    int b[a];
+    cout<<"enter numbers\n";
+    for (int i = 0; i < a; i++)
+    {
+        cin>>b[i];
+    }
+    sum=add<int>(&b[0],a);
+    cout<<sum<<endl;
+    
+}
+
+7. Write a C++ Program of Templated class derived from Non-templated class.
+
+ans:
+
+#include<iostream>
+using namespace std;
+class abb{
+    int a;
+    public:
+    abb(int e){a=e;}
+};
+template<class x>
+class b:public a
+{
+    x ee;
+    public:
+    b(int e,x ee):abb(e){cin>>ee;}
+
+};
+int main(){
+    b<int> papa(45,9.3);
+    return 0;
+}
+8. Write a C++ Program to implement push and pop methods from stack using
+template.
+
+ans:
+
+
+9. Write a C++ Program to Perform Simple Addition Function Using Templates.
+
+ans:
+
+#include<iostream>
+using namespace std;
+template<class x,class y,class z>
+z add(x e,y we){
+    return (e+we);
+}
+int main(){
+    int e;
+    e=add<int,float,int>(64,3.43);
+    cout<<e<<endl;
+    return 0;
+}
+10. Write a C++ program to implement Hash Table using Template Class.
